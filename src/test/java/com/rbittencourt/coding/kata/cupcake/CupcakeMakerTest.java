@@ -14,6 +14,20 @@ public class CupcakeMakerTest {
     }
 
     @Test
+    public void shouldReturnCupcakeWithChocolate() {
+        Ingredient ingredient = new Chocolate(new Cupcake());
+
+        assertEquals("Cupcake with chocolate", ingredient.description());
+    }
+
+    @Test
+    public void shouldReturnCupcakeWithChocolateAndNuts() {
+        Ingredient ingredient = new Nuts(new Chocolate(new Cupcake()));
+
+        assertEquals("Cupcake with chocolate and nuts", ingredient.description());
+    }
+
+    @Test
     public void shouldReturnCookieWhenIsPureCupcake() {
         Cookie cookie = new Cookie();
 
@@ -21,17 +35,17 @@ public class CupcakeMakerTest {
     }
 
     @Test
-    public void shouldReturnCupcakeWithChocolate() {
-        Cupcake cupcake = new Cupcake(new Chocolate());
+    public void shouldReturnCookieWithChocolate() {
+        Ingredient ingredient = new Chocolate(new Cookie());
 
-        assertEquals("Cupcake with chocolate", cupcake.description());
+        assertEquals("Cookie with chocolate", ingredient.description());
     }
 
     @Test
-    public void shouldReturnCupcakeWithChocolateAndNuts() {
-        Cupcake cupcake = new Cupcake(new Chocolate(), new Nuts());
+    public void shouldReturnCookieWithChocolateAndNuts() {
+        Ingredient ingredient = new Nuts(new Chocolate(new Cookie()));
 
-        assertEquals("Cupcake with chocolate and nuts", cupcake.description());
+        assertEquals("Cookie with chocolate and nuts", ingredient.description());
     }
 
 }

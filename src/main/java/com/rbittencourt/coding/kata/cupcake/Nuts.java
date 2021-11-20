@@ -1,9 +1,17 @@
 package com.rbittencourt.coding.kata.cupcake;
 
-public class Nuts {
+public class Nuts extends CakeDecorator {
+
+    public Nuts(Ingredient ingredient) {
+        super(ingredient);
+    }
 
     public String description() {
-        return "nuts";
+        if (!ingredient.description().contains("with")) {
+            return ingredient.description() + " with nuts";
+        }
+
+        return ingredient.description() + " and nuts";
     }
 
 }

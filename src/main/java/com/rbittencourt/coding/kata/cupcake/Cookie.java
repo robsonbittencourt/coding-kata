@@ -1,6 +1,6 @@
 package com.rbittencourt.coding.kata.cupcake;
 
-public class Cookie {
+public class Cookie implements Ingredient {
 
     public String description() {
         return "Cookie";
