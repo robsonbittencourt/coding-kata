@@ -1,5 +1,7 @@
 package com.rbittencourt.coding.kata.cupcake;
 
+import java.math.BigDecimal;
+
 public class Chocolate extends CakeDecorator {
 
     public Chocolate(Ingredient ingredient) {
@@ -12,6 +14,10 @@ public class Chocolate extends CakeDecorator {
         }
 
         return ingredient.description() + " and ";
+    }
+
+    public BigDecimal price() {
+        return ingredient.price().add(new BigDecimal("0.1"));
     }
 
 }

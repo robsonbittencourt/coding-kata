@@ -1,5 +1,7 @@
 package com.rbittencourt.coding.kata.cupcake;
 
+import java.math.BigDecimal;
+
 public abstract class CakeDecorator implements Ingredient {
 
     protected Ingredient ingredient;
@@ -10,6 +12,10 @@ public abstract class CakeDecorator implements Ingredient {
 
     public String description() {
         return ingredient.description();
+    }
+
+    public BigDecimal price() {
+        return ingredient.price();
     }
 
 }
