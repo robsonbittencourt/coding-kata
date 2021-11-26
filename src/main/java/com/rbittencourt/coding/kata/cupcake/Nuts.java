@@ -2,18 +2,15 @@ package com.rbittencourt.coding.kata.cupcake;
 
 import java.math.BigDecimal;
 
-public class Nuts extends CakeDecorator {
+public class Nuts extends Decorator {
 
     public Nuts(Ingredient ingredient) {
         super(ingredient);
     }
 
-    public String description() {
-        if (!ingredient.description().contains("with")) {
-            return ingredient.description() + " with nuts";
-        }
-
-        return ingredient.description() + " and nuts";
+    @Override
+    public String name() {
+        return "nuts";
     }
 
     @Override
